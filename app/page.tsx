@@ -8,6 +8,7 @@ import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import GitHubActivity from "@/components/ui/GitHubActivity";
 
 /* ─── Animated Counter Hook ─── */
 function useCounter(end: number, duration: number = 2000, startCounting: boolean = false) {
@@ -328,12 +329,16 @@ export default function Home() {
             </motion.section>
 
             {/* ══════════════════════════════════════
-                LIVE TERMINAL
+                LIVE PULSE & SYSTEM STATUS
                ══════════════════════════════════════ */}
             <section className="max-w-7xl mx-auto px-4 md:px-8 mb-12 md:mb-20">
-                <div className="font-mono text-xs font-bold uppercase tracking-[0.3em] text-ink/40 mb-2">Live Feed</div>
-                <h2 className="font-heading font-bold text-2xl md:text-3xl uppercase tracking-tight text-ink mb-4">System Status</h2>
-                <LiveTerminal />
+                <GitHubActivity />
+                
+                <div className="mt-12 md:mt-20">
+                    <div className="font-mono text-xs font-bold uppercase tracking-[0.3em] text-ink/40 mb-2">Live Feed</div>
+                    <h2 className="font-heading font-bold text-2xl md:text-3xl uppercase tracking-tight text-ink mb-4">System Status</h2>
+                    <LiveTerminal />
+                </div>
             </section>
 
             {/* ══════════════════════════════════════
